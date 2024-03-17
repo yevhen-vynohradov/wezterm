@@ -150,6 +150,22 @@ local keys = {
          timemout_miliseconds = 1000,
       }),
    },
+   --turn on the header
+   {
+      key = 'Enter',
+      mods = 'ALT|SHIFT',
+      ---@diagnostic disable-next-line: unused-local
+      action = wezterm.action_callback(function(win, pane)
+        local overrides = win:get_config_overrides() or {}
+        if overrides.window_decorations == 'RESIZE' then
+          overrides.window_decorations = "TITLE | RESIZE"
+        else
+          overrides.window_decorations = "RESIZE"
+        end
+        -- will emit `window-config-reloaded` event
+        win:set_config_overrides(overrides)
+      end),
+    },
 }
 
 local key_tables = {

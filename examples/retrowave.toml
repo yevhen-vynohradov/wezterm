@@ -1,0 +1,29 @@
+[colors]
+ansi = [
+  '#181A1F',
+  '#FF16B0',
+  '#3bfd3b',
+  '#fcee54',
+  '#46BDFF',
+  '#FF92DF',
+  '#df81fc',
+  '#FFFFFF',
+]
+brights = [
+  '#FF16B0',
+  '#f85353',
+  '#fcee54',
+  '#ffffff',
+  '#46BDFF',
+  '#FF92DF',
+  '#ff901f',
+  '#ffffff',
+]
+
+background = '#070825'
+foreground = '#46BDFF'
+
+[colors.indexed]
+
+[metadata]
+name = 'retrowave'

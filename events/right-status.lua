@@ -91,6 +91,39 @@ M.setup = function()
       _set_battery()
 
       window:set_right_status(wezterm.format(__cells__))
+
+      function get_left_cells()
+         -- Color palette for the backgrounds of each cell
+         local colors = {
+            "#3c1361",
+            "#52307c",
+            "#663a82",
+            "#7c5295",
+            "#b491c8",
+         }
+         -- Foreground color for the text across the fade
+         local text_fg = "#c0c0c0"
+
+         local elements = {}
+         local num_cells = 0
+         local cell_no = num_cells + 1
+         -- The filled in variant of the > symbol
+         local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
+         local active_workspace = window:active_workspace()
+         table.insert(elements, { Foreground = { Color = text_fg } })
+         table.insert(elements, { Background = { Color = '#5002f7' } })
+         table.insert(elements, { Text = "  " .. active_workspace .. "  " })
+         table.insert(elements, { Background = { Color = "#1a1b26" } })
+         table.insert(elements, { Foreground = { Color = '#5002f7' } })
+         table.insert(elements, { Text = SOLID_RIGHT_ARROW })
+         table.insert(elements, { Background = { Color = "#1a1b26" } })
+         table.insert(elements, { Foreground = { Color = colors[cell_no + 0] } })
+         table.insert(elements, { Text = "     " })
+         return elements
+      end
+
+      local left_cells = get_left_cells()
+      window:set_left_status(wezterm.format(left_cells))
    end)
 end
 
