@@ -26,7 +26,7 @@ local keys = {
    },
    -- toggle fullscreen
    { key = 'F11', mods = 'NONE', action = act.ToggleFullScreen },
-   { key = 'F12', mods = 'NONE', action = act.ShowDebugOverlay },
+   { key = 'F12', mods = 'ALT', action = act.ShowDebugOverlay },
    { key = 'f', mods = mod.SUPER, action = act.Search({ CaseInSensitiveString = '' }) },
    {
       key = 'u',

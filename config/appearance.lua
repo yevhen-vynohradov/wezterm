@@ -32,7 +32,6 @@ return {
    default_cursor_style = "BlinkingBar",
    cursor_blink_ease_in = "Constant",
    cursor_blink_ease_out = "Constant",
-   launch_menu = {},
 
    -- tab bar
    enable_tab_bar = true,

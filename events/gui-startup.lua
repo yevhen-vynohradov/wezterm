@@ -5,6 +5,8 @@ local M = {}
 
 M.setup = function()
    wezterm.on('gui-startup', function(cmd)
+    wezterm.log_info('gui-startup', wezterm.home_dir)
+
       local mux = wezterm.mux
     
       local padSize = 80
