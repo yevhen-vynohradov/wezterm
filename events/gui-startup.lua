@@ -1,3 +1,4 @@
+---@class WezTerm
 local wezterm = require('wezterm')
 local nf = wezterm.nerdfonts
 

@@ -231,6 +231,7 @@ wezterm.on("gui-startup", function(cmd)
 	-- left split
 	local nvim_tab, nvim_pane = blanket_window:spawn_tab({})
 	nvim_pane:send_text("wezterm cli send-text 'npm run ios && clear' && clear\n")
+	
 	-- right split
 	local right_split = nvim_pane:split({
 		direction = "Right",

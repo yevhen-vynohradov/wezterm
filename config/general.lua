@@ -1,12 +1,16 @@
-return {
+local gpu_adapters = require('utils.gpu_adapter')
+
+---@class Config
+local Config = {}
+
    -- behaviours
-   automatically_reload_config = true,
-   exit_behavior = 'CloseOnCleanExit', -- if the shell program exited with a successful status
-   status_update_interval = 1000,
+   Config.automatically_reload_config = true
+   Config.exit_behavior = 'CloseOnCleanExit' -- if the shell program exited with a successful status
+   Config.status_update_interval = 1000
 
-   scrollback_lines = 5000,
+   Config.scrollback_lines = 5000
 
-   hyperlink_rules = {
+   Config.hyperlink_rules = {
       -- Matches: a URL in parens: (URL)
       {
          regex = '\\((\\w+://\\S+)\\)',
@@ -41,5 +45,9 @@ return {
          regex = '\\b\\w+@[\\w-]+(\\.[\\w-]+)+\\b',
          format = 'mailto:$0',
       },
-   },
-}
+   }
+
+   Config.animation_fps = 60
+   Config.max_fps = 60
+
+return Config
