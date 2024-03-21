@@ -2,10 +2,6 @@ local wezterm = require('wezterm')
 local tools = require('utils.fun')
 local colors = require('colors')
 
-
--- local colors = require('colors.custom')
-
-
 ---@class Config
 local Config = {}
 
@@ -23,7 +19,7 @@ Config.background = {
     source = { Color = theme.background },
     width = "100%",
     height = "100%",
-    opacity = 0.96,
+    opacity = 0.9,
   },
 }
 

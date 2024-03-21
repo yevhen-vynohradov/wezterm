@@ -59,7 +59,7 @@ Config.font = wezterm.font_with_fallback {
 if platform().is_win then
   Config.font_size = 11
 else
-  Config.font_size = 13
+  Config.font_size = 14
 end
 
 Config.line_height = 1.2

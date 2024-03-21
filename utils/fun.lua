@@ -157,7 +157,7 @@ M.tbl_merge = function(t1, ...)
   return t1
 end
 
----Returns the colorscheme name absed on the system appearance
+---Returns the colorscheme name based on the system appearance
 ---@return '"kanagawa-wave"'|'"kanagawa-lotus"' colorscheme name of the colorscheme
 M.get_scheme = function()
   if (wez.gui and wez.gui.get_appearance() or "Dark"):find "Dark" then

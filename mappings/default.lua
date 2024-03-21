@@ -1,4 +1,5 @@
-local act = require("wezterm").action
+local wezterm = require('wezterm')
+local act = wezterm.action
 local fun = require "utils.fun" ---@class Fun
 
 ---@class Config
@@ -6,6 +7,18 @@ local Config = {}
 
 Config.disable_default_key_bindings = true
 Config.leader = { key = "\\", mods = "ALT", timeout_milliseconds = 1000 }
+
+local windowTitleCallback = function(win, pane)
+  local overrides = win:get_config_overrides() or {}
+  if overrides.window_decorations == 'RESIZE' then
+    overrides.window_decorations = "TITLE | RESIZE"
+  else
+    overrides.window_decorations = "RESIZE"
+  end
+  -- will emit `window-config-reloaded` event
+  win:set_config_overrides(overrides)
+end
+
 
 local keys = {
   ["<C-Tab>"] = act.ActivateTabRelative(1),
@@ -45,6 +58,9 @@ local keys = {
   ["<leader>f"] = act.ActivateKeyTable { name = "font_mode", one_shot = false },
   ["<leader>c"] = act.ActivateCopyMode,
   ["<leader>s"] = act.Search "CurrentSelectionOrEmptyString",
+
+  --turn on the header
+  ["<leader>b"] = wezterm.action_callback(windowTitleCallback),
 }
 
 for i = 1, 10 do
