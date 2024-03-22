@@ -2,17 +2,18 @@ local wezterm = require("wezterm") ---@class WezTerm
 local fun = require("utils.fun") ---@class Fun
 local icons = require("utils.icons") ---@class Icons
 local tabicons = icons.Separators.TabBar ---@class TabBarIcons
+local themes = require("colors")
 
--- Inspired by https://github.com/wez/wezterm/discussions/628#discussioncomment-1874614
+-- -- Inspired by https://github.com/wez/wezterm/discussions/628#discussioncomment-1874614
 
-local GLYPH_SEMI_CIRCLE_LEFT = ' '
--- local GLYPH_SEMI_CIRCLE_LEFT = utf8.char(0xe0b6)
-local GLYPH_SEMI_CIRCLE_RIGHT = ' '
--- local GLYPH_SEMI_CIRCLE_RIGHT = utf8.char(0xe0b4)
-local GLYPH_CIRCLE = ''
--- local GLYPH_CIRCLE = utf8.char(0xf111)
-local GLYPH_ADMIN = '󰞀'
--- local GLYPH_ADMIN = utf8.char(0xf0780)
+-- local GLYPH_SEMI_CIRCLE_LEFT = ' '
+-- -- local GLYPH_SEMI_CIRCLE_LEFT = utf8.char(0xe0b6)
+-- local GLYPH_SEMI_CIRCLE_RIGHT = ' '
+-- -- local GLYPH_SEMI_CIRCLE_RIGHT = utf8.char(0xe0b4)
+-- local GLYPH_CIRCLE = ''
+-- -- local GLYPH_CIRCLE = utf8.char(0xf111)
+-- local GLYPH_ADMIN = '󰞀'
+-- -- local GLYPH_ADMIN = utf8.char(0xf0780)
 
 local M = {}
 
@@ -80,38 +81,7 @@ local function basename(s)
   return string.gsub(s, "(.*[/\\])(.*)", "%2")
 end
 
-local SOLID_LEFT_ARROW = utf8.char(0xe0ba)
-local SOLID_LEFT_MOST = utf8.char(0x2588)
-local SOLID_RIGHT_ARROW = utf8.char(0xe0bc)
-
-local ADMIN_ICON = utf8.char(0xf49c)
-
-local CMD_ICON = utf8.char(0xe62a)
-local NU_ICON = utf8.char(0xe7a8)
-local PS_ICON = utf8.char(0xe70f)
-local ELV_ICON = utf8.char(0xfc6f)
-local WSL_ICON = utf8.char(0xf033d)
-local YORI_ICON = utf8.char(0xf1d4)
-local NYA_ICON = utf8.char(0xf61a)
-
-local VIM_ICON = utf8.char(0xe62b)
-local PAGER_ICON = utf8.char(0xf718)
-local FUZZY_ICON = utf8.char(0xf0b0)
-local HOURGLASS_ICON = utf8.char(0xf252)
-local SUNGLASS_ICON = utf8.char(0xf9df)
-
-local PYTHON_ICON = utf8.char(0xf820)
-local NODE_ICON = utf8.char(0xf0399)
-local DENO_ICON = utf8.char(0xe628)
-local LAMBDA_ICON = utf8.char(0xfb26)
-
-local SUP_IDX = { "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹", "¹⁰",
-  "¹¹", "¹²", "¹³", "¹⁴", "¹⁵", "¹⁶", "¹⁷", "¹⁸", "¹⁹", "²⁰" }
-local SUB_IDX = { "₁", "₂", "₃", "₄", "₅", "₆", "₇", "₈", "₉", "₁₀",
-  "₁₁", "₁₂", "₁₃", "₁₄", "₁₅", "₁₆", "₁₇", "₁₈", "₁₉", "₂₀" }
-
 M.setup = function()
-  
   --  wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
   --     local edge_background = "#121212"
   --     local background = "#4E4E4E"
@@ -199,7 +169,7 @@ M.setup = function()
       return
     end
 
-    local theme = require("colors")[fun.get_scheme()]
+    local theme = themes[fun.get_scheme()]
     local bg = theme.tab_bar.background
     local fg
 

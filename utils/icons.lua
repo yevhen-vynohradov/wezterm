@@ -30,12 +30,30 @@ M.Separators = {
 }
 
 M.Vim = nf.dev_vim
-
 M.Pwsh = nf.md_powershell
+M.Cmd = nf.cod_terminal_cmd
 
 M.Bash = nf.md_bash
-
 M.Git = nf.md_git
+
+M.Node = nf.md_nodejs
+M.Python = nf.dev_python
+M.Deno = nf.seti_typescript
+M.Labmda = nf.md_lambda
+
+M.Admin = nf.oct_shield
+M.WSL = nf.md_linux
+
+M.Pager = nf.md_file_document
+M.Fuzzy = nf.fa_filter
+M.Hourglass = nf.fa_hourglass_2
+M.Sunglass = nf.md_sunglasses
+
+M.sup_idx = { "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹", "¹⁰",
+  "¹¹", "¹²", "¹³", "¹⁴", "¹⁵", "¹⁶", "¹⁷", "¹⁸", "¹⁹", "²⁰" }
+M.sub_idx = { "₁", "₂", "₃", "₄", "₅", "₆", "₇", "₈", "₉", "₁₀",
+  "₁₁", "₁₂", "₁₃", "₁₄", "₁₅", "₁₆", "₁₇", "₁₈", "₁₉", "₂₀" }
+
 
 ---@class BatteryIcons: table, table
 ---@field charging table Icons for charging battery in increments of 10

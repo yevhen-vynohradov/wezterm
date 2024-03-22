@@ -27,7 +27,7 @@ end
 ---```lua
 ----- Example usage in wezterm.lua
 ---local Config = require "config"
----return Config:init():add(require "<module.name>").options
+---return Config:init():append("<module.name>").options
 ---```
 function Config:append(new_options)
    if type(new_options) == "string" then

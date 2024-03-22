@@ -1,6 +1,7 @@
 local wezterm = require('wezterm')
 local tools = require('utils.fun')
 local colors = require('colors')
+local custom_colors = require('utils.custom_colors')
 
 ---@class Config
 local Config = {}
@@ -80,10 +81,10 @@ Config.window_frame = {
   border_right_width = '0.3cell',
   border_bottom_height = '0.125cell',
   border_top_height = '0.125cell',
-  border_left_color = window_border_color,
-  border_right_color = window_border_color,
-  border_bottom_color = window_border_color,
-  border_top_color = window_border_color,
+  border_left_color = custom_colors.window_border_color,
+  border_right_color = custom_colors.window_border_color,
+  border_bottom_color = custom_colors.window_border_color,
+  border_top_color = custom_colors.window_border_color,
 }
 
 Config.inactive_pane_hsb = {
