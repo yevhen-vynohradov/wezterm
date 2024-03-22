@@ -7,6 +7,8 @@ local Config = {}
 
 local scheme = tools.get_scheme()
 local theme = colors[scheme]
+local window_border_color = "#5002f7"
+
 
 Config.color_schemes = colors
 Config.color_scheme = scheme
@@ -78,10 +80,10 @@ Config.window_frame = {
   border_right_width = '0.3cell',
   border_bottom_height = '0.125cell',
   border_top_height = '0.125cell',
-  border_left_color = '#5002f7',
-  border_right_color = '#5002f7',
-  border_bottom_color = '#5002f7',
-  border_top_color = '#5002f7',
+  border_left_color = window_border_color,
+  border_right_color = window_border_color,
+  border_bottom_color = window_border_color,
+  border_top_color = window_border_color,
 }
 
 Config.inactive_pane_hsb = {
