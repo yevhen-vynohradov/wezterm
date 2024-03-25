@@ -15,7 +15,7 @@ if platform.is_win then
       { label = '🔵 Windows PowerShell', args = { 'powershell' } },
    }
 elseif platform.is_mac then
-   Config.default_prog = { 'fish', '-l' }
+   Config.default_prog = { 'zsh', '-l' }
    Config.launch_menu = {
       { label = 'Fish',    args = { 'fish' } },
       { label = 'Zsh',     args = { 'zsh' } },
