@@ -4,19 +4,7 @@ local icons = require("utils.icons") ---@class Icons
 local tabicons = icons.Separators.TabBar ---@class TabBarIcons
 local themes = require("colors")
 
--- -- Inspired by https://github.com/wez/wezterm/discussions/628#discussioncomment-1874614
-
--- local GLYPH_SEMI_CIRCLE_LEFT = ' '
--- -- local GLYPH_SEMI_CIRCLE_LEFT = utf8.char(0xe0b6)
--- local GLYPH_SEMI_CIRCLE_RIGHT = ' '
--- -- local GLYPH_SEMI_CIRCLE_RIGHT = utf8.char(0xe0b4)
--- local GLYPH_CIRCLE = ''
--- -- local GLYPH_CIRCLE = utf8.char(0xf111)
--- local GLYPH_ADMIN = '󰞀'
--- -- local GLYPH_ADMIN = utf8.char(0xf0780)
-
 local M = {}
-
 local __cells__ = {}
 
 local colors = {
@@ -82,6 +70,7 @@ local function basename(s)
 end
 
 M.setup = function()
+
   --  wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
   --     local edge_background = "#121212"
   --     local background = "#4E4E4E"
@@ -205,6 +194,8 @@ M.setup = function()
         :gsub("^Administrator: %w+", icons.Admin)
         :gsub("pwsh", icons.Pwsh)
         :gsub("bash", icons.Bash)
+        -- :gsub("wsl", icons.WSL)
+        -- :gsub("node", icons.Node)
         :gsub("Copy mode: ", "")
 
     local proc = pane.foreground_process_name

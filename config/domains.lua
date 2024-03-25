@@ -14,7 +14,7 @@ Config.wsl_domains = {
       distribution = 'Ubuntu',
       username = 'yevhen',
       default_cwd = '/home/yevhen',
-      default_prog = { 'zsh' },
+      default_prog = { 'fish', '-l' },
    },
 }
 
